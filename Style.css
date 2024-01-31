@@ -3,14 +3,20 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #001E10, #003E21);
+    background: linear-gradient(to bottom,#00A357,#002916);
     color: white;
     font-family: 'Times New Roman', Times, serif;
 }
 /* Style the navbar */
 nav {
-    background-color: #003E21; /* Change the background color */
+    background-color: #003E21;
     overflow: hidden;
+    position: sticky;  /* Set the position to sticky */
+    top: 0;  /* Stick to the top */
+    z-index: 100;  /* Ensure the navbar is on top of other elements */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* Navbar links */
@@ -24,19 +30,11 @@ nav a {
     flex: 1; /* Equal spacing using flex */
     border: 4px solid #DCBB57;
 }
-
-/* Changing color when hovering */
 nav a:hover {
     background-color: #007A41;
     color: black;
 }
 
-/* Center with flex*/
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 /* Responsive navbar */
 @media screen and (max-width: 600px) {
@@ -133,6 +131,7 @@ nav {
     margin-top: 0px; /* Add margin-top to create space between navbar and picture */
     display: flex;
     flex-direction: row;
+
 }
 .skills-text{
     flex: 1;
@@ -265,4 +264,15 @@ footer {
     text-align: center;
     bottom: 0;
     width: 100%;
+}
+footer a:link,
+footer a:visited {
+    color: #DCBB57; /* Link color */
+    text-decoration: none;
+}
+footer a:hover {
+    color: #DCBB57;
+}
+footer .fa-github {
+    font-size: 30px; /* Adjust the font size as needed */
 }
