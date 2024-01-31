@@ -1,0 +1,268 @@
+/* whole page styles */
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #001E10, #003E21);
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+/* Style the navbar */
+nav {
+    background-color: #003E21; /* Change the background color */
+    overflow: hidden;
+}
+
+/* Navbar links */
+nav a {
+    float: left;
+    display: block;
+    color: #DCBB57;
+    text-align: center;
+    padding: 14px 0; /* Adjusted padding */
+    text-decoration: none;
+    flex: 1; /* Equal spacing using flex */
+    border: 4px solid #DCBB57;
+}
+
+/* Changing color when hovering */
+nav a:hover {
+    background-color: #007A41;
+    color: black;
+}
+
+/* Center with flex*/
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Responsive navbar */
+@media screen and (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav a, nav .logo {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+/* Container for About Me section */
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Style for the About Me text */
+.about-text {
+    flex: 1;
+    color: #DCBB57;
+}
+
+.about-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.about-text p {
+    font-size: 18px;
+}
+
+/* Style for the image container */
+.image-container {
+    flex: 1;
+    text-align: center;
+}
+
+/* Style for oval frame */
+.oval-frame {
+    border-radius: 50%;
+    width: 350px; /* Adjust the width as needed */
+    height: 350px; /* Adjust the height as needed */
+    object-fit: cover;
+    border: 5px solid #DCBB57; /* Border color */
+}
+/* Style for oval frame container */
+.ovals-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px; /* Adjust margin as needed */
+}
+
+/* Style for oval frame */
+.oval-frame-container {
+    width: 350px; /* Adjust the width as needed */
+    height: 350px; /* Adjust the height as needed */
+    margin-top: 50px;
+}
+
+.oval-frame-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Responsive styling */
+@media screen and (max-width: 600px) {
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-text, .image-container {
+        width: 100%;
+    }
+}
+/* Container for Skills section */
+.skills-container{
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.skillsintro-container {
+    max-width: 800px;
+    margin: auto;
+    margin-top: 0px; /* Add margin-top to create space between navbar and picture */
+    display: flex;
+    flex-direction: row;
+}
+.skills-text{
+    flex: 1;
+    color: #DCBB57;
+}
+.skills-text p {
+    font-size: 18px;
+}
+/* Add this section for the skill bars */
+.skill {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-top: 25px;
+}
+
+/* Style for the skill icon */
+.skill-icon {
+    width: 40px; /* Adjust the width as needed */
+    max-height: 30px; /* Set a maximum height */
+    margin-right: 10px; /* Adjust the space between icon and bar */
+}
+
+/* Style for the skill icon image */
+.skill-icon img {
+    max-width: 100%; /* Ensure the image does not exceed the container width */
+    max-height: 100%; /* Ensure the image does not exceed the container height */
+    object-fit: contain; /* Adjust the scaling behavior */
+}
+
+/* Style for the skill name and bar container */
+.skill-details {
+    flex: 1;
+}
+
+/* Style for the skill name */
+.skill-name {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* Style for the skill bar */
+.skill-bar {
+    height: 20px;
+    background-color: white; /* Change the color as needed */
+    border: 2px solid crimson; /* Add border */
+}
+.skill-bar-fill {
+    height: 100%;
+    background-color: #DCBB57; /* Fill color */
+}
+.allskills{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+}
+.bars-left{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.bars-right{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: 35px;
+}
+/* Responsive styling */
+@media screen and (max-width: 600px) {
+    .skills-container {
+        padding: 10px;
+    }
+}
+
+/* Add this section for the projects heading */
+.projects-heading {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.projects-heading h1 {
+    font-size: 36px;
+    color: #DCBB57; /* Choose your desired color */
+}
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.project-box {
+    width: 30%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.project-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid #DCBB57;
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.project-box:hover img {
+    opacity: 0.5;
+}
+
+.project-description {
+    font-size: 16px;
+    text-align: center;
+    color: #DCBB57;
+}
+
+.project-title {
+    font-size: 24px;
+    text-align: center;
+    color: #DCBB57;
+}
+/* Style for the footer */
+footer {
+    background-color: #003E21;
+    color: #DCBB57;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+}
