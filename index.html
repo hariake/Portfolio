@@ -4,6 +4,24 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Style.css">
     <title>Title</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="img/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.polyfills.min.js"></script>
     <script src="https://kit.fontawesome.com/afe260e2e6.js" crossorigin="anonymous"></script>
     <script>
         // JavaScript to handle smooth scrolling when clicking on navbar links
@@ -18,10 +36,32 @@
                     const targetElement = document.getElementById(targetId);
 
                     if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 20, // Adjust this value as needed
-                            behavior: 'smooth'
-                        });
+                        const offset = 50; // Adjust this value as needed
+                        const targetPosition = targetElement.offsetTop - offset;
+                        const startPosition = window.pageYOffset;
+                        const distance = targetPosition - startPosition;
+                        const duration = 800; // Adjust this value for the scroll speed
+
+                        let startTime;
+
+                        function scrollAnimation(currentTime) {
+                            if (!startTime) startTime = currentTime;
+
+                            const timeElapsed = currentTime - startTime;
+                            const progress = Math.min(timeElapsed / duration, 1);
+                            const easedProgress = easeInOutQuad(progress);
+                            window.scrollTo(0, startPosition + distance * easedProgress);
+
+                            if (timeElapsed < duration) {
+                                requestAnimationFrame(scrollAnimation);
+                            }
+                        }
+
+                        function easeInOutQuad(t) {
+                            return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+                        }
+
+                        requestAnimationFrame(scrollAnimation);
                     }
                 });
             });
@@ -40,7 +80,7 @@
 <div class="about-container" id="about">
     <div class="about-text">
         <h2>About Me</h2>
-        <p>Hello, my name is Tõnis. Currently, I am studying web development in Tartu Vocational College and I believe that this is my true calling, after studying in many other fields of areas, which in the end were not my cup of tea. I dream of becoming a game developer and have tried my hand at creating a browser-based game, the prototype of which I will show you on this page. Even after finding my passion in coding, I still try to find time for my nerdy hobbies such as playing Magic: The gathering, painting my warhammer miniatures or playing basketball... one of these is not like the others.</p>
+        <p>Hello, my name is Tõnis. Currently, I am studying web development in Tartu Vocational College and I believe that this is my true calling, after studying in many other fields of areas, which in the end were not my cup of tea. <br> I dream of becoming a game developer and have tried my hand at creating a browser-based game, the prototype of which I will show you on this page. Even after finding my passion in coding, I still try to find time for my nerdy hobbies such as playing Magic: The gathering, painting my warhammer miniatures or playing basketball... one of these is not like the others.</p>
     </div>
     <div class="image-container">
         <img src="./img/vunts.PNG" alt="Me" class="oval-frame">
@@ -52,12 +92,10 @@
     <div class="skillsintro-container">
         <div class="skills-text">
             <h2>My Skills</h2>
-            <p>Out of all the coding languages that I have learned so far, JavaScript is the one I have liked the most. It made my brain rush with new ideas and that is how I started making my own browser-based game. That is why I think my best skill is JS and I prefer working with that language, my excitement has increased by the fact that I just started learning React. After the winter break I used my HTML and CSS skills in a school project where I had to make a webpage which was designed by the UI/UX students, and I found out that I was not as rusty as I thought I was after a long break. Something that surprised me was that I did not believe I would like to work with Databases very much, but database lessons have become one of my favorites and I quite enjoy working with databases.</p>
-        </div>
-        <div class="image-container">
-            <img src="./img/vunts2.PNG" alt="Me" class="oval-frame">
+            <p>Out of all the coding languages that I have learned so far, JavaScript is the one I have liked the most. It made my brain rush with new ideas and that is how I started making my own browser-based game. That is why I think my best skill is JS and I prefer working with that language, my excitement has increased by the fact that I just started learning React.<br> After the winter break I used my HTML and CSS skills in a school project where I had to make a webpage which was designed by the UI/UX students, and I found out that I was not as rusty as I thought I was after a long break.<br> Something that surprised me was that I did not believe I would like to work with Databases very much, but database lessons have become one of my favorites and I quite enjoy working with databases.  </p>
         </div>
     </div>
+    <h3> I have put all of my skill bars full, because even if I dont have 100% knowledge about them, I have 100% confidence that I can learn and improve myself in order to complete any task given to me in that area.</h3>
     <div class="allskills">
         <div class="bars-left">
             <div class="skill">
@@ -67,7 +105,7 @@
                 <div class="skill-details">
                     <div class="skill-name">JavaScript</div>
                     <div class="skill-bar">
-                        <div class="skill-bar-fill" style="width: 80%;"></div>
+                        <div class="skill-bar-fill" style="width: 100%;"><span class="skill-bar-text">100%!!!</span></div>
                     </div>
                 </div>
             </div>
@@ -78,7 +116,7 @@
                 <div class="skill-details">
                     <div class="skill-name">MariaDB</div>
                     <div class="skill-bar">
-                        <div class="skill-bar-fill" style="width: 50%;"></div>
+                        <div class="skill-bar-fill" style="width: 100%;"><span class="skill-bar-text">100%!!!</span></div>
                     </div>
                 </div>
             </div>
@@ -91,7 +129,7 @@
                 <div class="skill-details">
                     <div class="skill-name">HTML</div>
                     <div class="skill-bar">
-                        <div class="skill-bar-fill" style="width: 30%;"></div>
+                        <div class="skill-bar-fill" style="width: 100%;"><span class="skill-bar-text">100%!!!</span></div>
                     </div>
                 </div>
             </div>
@@ -102,10 +140,11 @@
                 <div class="skill-details">
                     <div class="skill-name">CSS</div>
                     <div class="skill-bar">
-                        <div class="skill-bar-fill" style="width: 40%;"></div>
+                        <div class="skill-bar-fill" style="width: 100%;"><span class="skill-bar-text">100%!!!</span></div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
@@ -118,41 +157,47 @@
 <div class="projects-grid">
     <!-- Row 1 -->
     <div class="project-box">
-        <a href="https://tonisvs23.ikt.khk.ee/JS/ork/ork.html">
+        <a href="https://tonisvs23.ikt.khk.ee/JS/ork/ork.html" target="_blank">
             <img src="./img/orkimang.png" alt="Project 1">
         </a>
         <h2 class="project-title">ORKIMÄNG!</h2>
+        <p> ORCGAME! a browser roleplaying game i want to complete one day</p>
     </div>
     <div class="project-box">
-        <a href="https://tonisvs23.ikt.khk.ee/Veebiarendus/yhe_leheline_veebisait/">
+        <a href="https://tonisvs23.ikt.khk.ee/Veebiarendus/yhe_leheline_veebisait/" target="_blank">
             <img src="./img/kahene.PNG" alt="Project 2">
         </a>
         <h2 class="project-title">One-page webpage</h2>
+        <p> First one page webpage we had to do at school</p>
     </div>
     <div class="project-box">
-        <a href="https://tonisvs23.ikt.khk.ee/Veebiarendus/mitme_leheline_veebisait/index.html">
+        <a href="https://tonisvs23.ikt.khk.ee/Veebiarendus/mitme_leheline_veebisait/index.html" target="_blank">
             <img src="./img/yhene.PNG" alt="Project 3">
         </a>
         <h2 class="project-title">Multiple page webpage</h2>
+        <p> First multiple page webpage we had to do at school</p>
     </div>
     <!-- Row 2 -->
     <div class="project-box">
-        <a href="https://tonisvs23.ikt.khk.ee/Veebiarendus/orgimanguleht/">
+        <a href="https://tonisvs23.ikt.khk.ee/Veebiarendus/orgimanguleht/" target="_blank">
             <img src="./img/orkileht.PNG" alt="Project 4">
         </a>
         <h2 class="project-title">ORKIMÄNG! the webpage</h2>
+        <p> This is a webpage me and my classmate Kaur did as a website project for my browsergame</p>
     </div>
     <div class="project-box">
-        <a href="https://tonisvs23.ikt.khk.ee/JS/">
+        <a href="https://tonisvs23.ikt.khk.ee/JS/" target="_blank">
             <img src="./img/stuff.PNG" alt="Project 5">
         </a>
         <h2 class="project-title">Things I have done at school with JS</h2>
+        <p> Just some mini school projects when we started to learn JS</p>
     </div>
     <div class="project-box">
-        <a href="https://tonisvs23.ikt.khk.ee/aastategija">
+        <a href="https://tonisvs23.ikt.khk.ee/aastategija" target="_blank">
             <img src="./img/töö2.PNG" alt="Project 6">
         </a>
         <h2 class="project-title">Duo team project made after UX/UI students design</h2>
+        <p> Teamwork project also with Kaur, we had to take a figma project and make it real</p>
     </div>
 </div>
 

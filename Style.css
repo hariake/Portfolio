@@ -3,7 +3,7 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom,#00A357,#002916);
+    background: linear-gradient(to bottom,#00381E,#002916);
     color: white;
     font-family: 'Times New Roman', Times, serif;
 }
@@ -68,7 +68,7 @@ nav a:hover {
     margin-bottom: 10px;
 }
 .about-text p {
-    font-size: 18px;
+    font-size: 22px;
 }
 
 /* Style for the image container */
@@ -125,20 +125,23 @@ nav a:hover {
     display: flex;
     flex-direction: column;
 }
+.skills-container h3{
+    font-size: 22px;
+    color: #DCBB57;
+    justify-content: center;
+    margin-top: 100px;
+}
 .skillsintro-container {
     max-width: 800px;
-    margin: auto;
-    margin-top: 0px; /* Add margin-top to create space between navbar and picture */
     display: flex;
     flex-direction: row;
-
 }
 .skills-text{
     flex: 1;
     color: #DCBB57;
 }
 .skills-text p {
-    font-size: 18px;
+    font-size: 22px;
 }
 /* Add this section for the skill bars */
 .skill {
@@ -183,9 +186,20 @@ nav a:hover {
 .skill-bar-fill {
     height: 100%;
     background-color: #DCBB57; /* Fill color */
+    position: relative;
+    overflow: hidden;
+}
+.skill-bar-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
 }
 .allskills{
-    margin-top: 40px;
+    margin-top: 0px;
     display: flex;
     flex-direction: row;
 }
@@ -231,6 +245,12 @@ nav a:hover {
     flex-direction: column;
     align-items: center;
     position: relative;
+    margin-bottom: 30px;
+}
+.project-box p{
+    color: #DCBB57;
+    font-size: 20px;
+    text-align: center;
 }
 
 .project-box img {
